@@ -1,0 +1,13 @@
+<%= form_for @tweet do |t| %>
+  <p>
+      <%= t.label :tittle %><br>
+      <%= t.text_field :tittle %><br>
+      <%= t.label :message %><br>
+      <%= t.text_field :message %><br><br>
+      <%=t.collection_select :user_id, User.all, :id, :email%>
+
+  </p>
+  <p>
+    <%= t.submit %>
+  </p>
+<% end %>
